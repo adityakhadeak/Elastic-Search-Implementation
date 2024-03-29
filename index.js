@@ -3,7 +3,7 @@ import bodyParser from "body-parser";
 import dotenv from 'dotenv'
 import elasticClient from "./elasticClient.js";
 import searchRouter from "./routes/searchRoutes.js";
-
+import indexRouter from "./routes/indexDataRoute.js";
 const app = express();
 
 dotenv.config()
@@ -11,6 +11,7 @@ dotenv.config()
 app.use(bodyParser.json());
 
 app.use('/api',searchRouter)
+app.use('/api',indexRouter)
 
 const port=4000
 
