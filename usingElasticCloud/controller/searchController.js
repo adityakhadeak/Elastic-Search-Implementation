@@ -7,11 +7,11 @@ export const searchSimple = async (req,res) => {
 
         // Execute the search query
         const searchResults = await elasticClient.search({
-            index: 'shakespeare', // Replace with your index name
+            index: 'shakespeareplays', // Replace with your index name
             body: {
                 query: {
                     match: {
-                        text_entry: query
+                        playerline: query
                     }
                 }
             }
